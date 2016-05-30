@@ -19,13 +19,13 @@
         <!-- 0-->
         <item>0</item>
         <!-- 5-->
-        <item>5</item>
+        <item>0</item>
         <!-- 10-->
-        <item>1A</item>
+        <item>0</item>
         <!-- 15-->
-        <item>1F</item>
+        <item>0</item>
         <!-- 20-->
-        <item>24</item>
+        <item>0</item>
 
         <item>13</item>
         <item>14</item>
@@ -33,8 +33,10 @@
         <item>17</item>
         <item>18</item>
         <item>19</item>
+        <item>19</item>
         <item>1A</item>
         <item>1B</item>
+        <item>1C</item>
         <item>1C</item>
         <item>1D</item>
         <item>1E</item>

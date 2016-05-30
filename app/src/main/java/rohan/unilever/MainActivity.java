@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     AutoCompleteTextView time1, time2, time3, time4, speed1, speed2, speed3, speed4;
+    String sendString = "23,01,";
 
     // speed-hexx[(s1%5)+5]
 
@@ -112,11 +113,15 @@ public class MainActivity extends AppCompatActivity {
             speed4.requestFocus();
             return;
         }
-        String test[] = MainActivity.this.getResources().getStringArray(R.array.speed_hex);
-        Toast.makeText(MainActivity.this, "Yet to come! "+(s1/5)+" "+ test[((s1/5))], Toast.LENGTH_SHORT).show();
+        String speedArray[] = MainActivity.this.getResources().getStringArray(R.array.speed_hex);
+        sendString = "23,01,"+ Integer.toHexString(t1).toUpperCase() +","+speedArray[(s1/5)]+","+Integer.toHexString(t2).toUpperCase() +","+speedArray[(s2/5)]+","+Integer.toHexString(t3).toUpperCase() +","+speedArray[(s3/5)]+","+Integer.toHexString(t4).toUpperCase() +","+speedArray[(s4/5)]+","+"2A";
+        Toast.makeText(MainActivity.this, "Yet to come! "+sendString, Toast.LENGTH_SHORT).show();
+        DeviceList.connectedThread.write(sendString);
     }
 
     public void stop(View view) {
+        sendString = "23,01,0,0,0,0,0,0,0,0,2A";
         Toast.makeText(MainActivity.this, "Yet to come!", Toast.LENGTH_SHORT).show();
+        DeviceList.connectedThread.write(sendString);
     }
 }
