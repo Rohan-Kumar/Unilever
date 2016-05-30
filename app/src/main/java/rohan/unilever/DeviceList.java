@@ -79,6 +79,10 @@ public class DeviceList extends AppCompatActivity {
 
                     connectedThread = new ConnectedThread(bluetoothSocket);
                     connectedThread.start();
+
+                    Intent intent = new Intent(DeviceList.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             });
 
