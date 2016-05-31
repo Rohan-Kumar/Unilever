@@ -14,6 +14,20 @@
     <string name="Speed4">  \t S4(X100RPM)\t</string>
     <string name="stop">\tSTOP\t</string>
     <string name="start">\tSTART\t</string>
+    <string name="input_1">Input 1</string>
+    <string name="input_2">Input 2</string>
+    <string name="input_3">Input 3</string>
+    <string name="input_4">Input 4</string>
+    <string name="s1">S1</string>
+    <string name="t1">T1</string>
+    <string name="t2">T2</string>
+    <string name="s2">S2</string>
+    <string name="t3">T3</string>
+    <string name="s3">S3</string>
+    <string name="t4">T4</string>
+    <string name="s4">S4</string>
+    <string name="start_">Start</string>
+    <string name="stop_">Stop</string>
 
     <string-array name="speed_hex">
         <!-- 0-->

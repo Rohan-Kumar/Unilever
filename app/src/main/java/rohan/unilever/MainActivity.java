@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
         init();
     }
 
@@ -89,23 +89,43 @@ public class MainActivity extends AppCompatActivity {
             time4.requestFocus();
             return;
         }
-        if (s1 > 210 || (s1 % 5) != 0) {
-            speed1.setError("Should be a multiple of 5 less than 210");
+        if (s1 > 210 ) {
+            speed1.setError("Should be less than 210");
             speed1.requestFocus();
             return;
         }
-        if (s2 > 210 || (s2 % 5) != 0) {
-            speed2.setError("Should be a multiple of 5 less than 210");
+        if((s1 % 5) != 0){
+            speed1.setError("Should be a multiple of 5");
+            speed1.requestFocus();
+            return;
+        }
+        if (s2 > 210) {
+            speed2.setError("Should be less than 210");
             speed2.requestFocus();
             return;
         }
-        if (s3 > 210 || (s3 % 5) != 0) {
-            speed3.setError("Should be a multiple of 5 less than 210");
+        if((s2 % 5) != 0){
+            speed2.setError("Should be a multiple of 5 ");
+            speed2.requestFocus();
+            return;
+        }
+        if (s3 > 210) {
+            speed3.setError("Should be less than 210");
+            speed3.requestFocus();
+            return;
+        }
+        if((s3 % 5) != 0){
+            speed3.setError("Should be a multiple of 5");
             speed3.requestFocus();
             return;
         }
         if (s4 > 210 || (s4 % 5) != 0) {
-            speed4.setError("Should be a multiple of 5 less than 210");
+            speed4.setError("Should be less than 210");
+            speed4.requestFocus();
+            return;
+        }
+        if((s4 % 5) != 0){
+            speed4.setError("Should be a multiple of 5");
             speed4.requestFocus();
             return;
         }

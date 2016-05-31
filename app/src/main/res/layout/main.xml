@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/mainLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#3498db"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:text="@string/input_1"
+                android:textColor="#fff" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:inputType="number"
+                android:background="@drawable/border"
+                android:hint="@string/t1"
+                android:textAlignment="center"
+                android:id="@+id/time1" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:inputType="number"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:hint="@string/s1"
+                android:textAlignment="center"
+                android:id="@+id/speed1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#3498db"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:text="@string/input_2"
+                android:textColor="#fff" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:inputType="number"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:hint="@string/t2"
+                android:textAlignment="center"
+                android:id="@+id/time2" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:inputType="number"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:hint="@string/s2"
+                android:textAlignment="center"
+                android:id="@+id/speed2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#3498db"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:text="@string/input_3"
+                android:textColor="#fff" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:inputType="number"
+                android:hint="@string/t3"
+                android:textAlignment="center"
+                android:id="@+id/time3" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:hint="@string/s3"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:id="@+id/speed3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#3498db"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:text="@string/input_4"
+                android:textColor="#fff" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:inputType="number"
+                android:hint="@string/t4"
+                android:textAlignment="center"
+                android:id="@+id/time4" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:background="@drawable/border"
+                android:inputType="number"
+                android:hint="@string/s4"
+                android:textAlignment="center"
+                android:id="@+id/speed4" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="40dp"
+        android:padding="3dp"
+        android:text="Time(in Sec)"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/textView"
+        android:padding="3dp"
+        android:text="Speed(x100rpm)"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainLay"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:background="#2ecc71"
+                android:textColor="#fff"
+                android:onClick="start"
+                android:text="@string/start_" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:background="#2ecc71"
+                android:onClick="stop"
+                android:text="@string/stop_" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
