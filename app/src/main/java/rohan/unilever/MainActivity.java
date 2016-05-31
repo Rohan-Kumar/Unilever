@@ -1,18 +1,14 @@
 package rohan.unilever;
 
-import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    AutoCompleteTextView time1, time2, time3, time4, speed1, speed2, speed3, speed4;
-    String sendString = "23,01,";
+    EditText time1, time2, time3, time4, speed1, speed2, speed3, speed4;
+    String sendString = "";
 
     // speed-hexx[(s1%5)+5]
 
@@ -24,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void init() {
-        time1 = (AutoCompleteTextView) findViewById(R.id.time1);
-        time2 = (AutoCompleteTextView) findViewById(R.id.time2);
-        time3 = (AutoCompleteTextView) findViewById(R.id.time3);
-        time4 = (AutoCompleteTextView) findViewById(R.id.time4);
-        speed1 = (AutoCompleteTextView) findViewById(R.id.speed1);
-        speed2 = (AutoCompleteTextView) findViewById(R.id.speed2);
-        speed3 = (AutoCompleteTextView) findViewById(R.id.speed3);
-        speed4 = (AutoCompleteTextView) findViewById(R.id.speed4);
+        time1 = (EditText) findViewById(R.id.time1);
+        time2 = (EditText) findViewById(R.id.time2);
+        time3 = (EditText) findViewById(R.id.time3);
+        time4 = (EditText) findViewById(R.id.time4);
+        speed1 = (EditText) findViewById(R.id.speed1);
+        speed2 = (EditText) findViewById(R.id.speed2);
+        speed3 = (EditText) findViewById(R.id.speed3);
+        speed4 = (EditText) findViewById(R.id.speed4);
     }
 
 
@@ -114,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         String speedArray[] = MainActivity.this.getResources().getStringArray(R.array.speed_hex);
-        sendString = "23,01,"+ Integer.toHexString(t1).toUpperCase() +","+speedArray[(s1/5)]+","+Integer.toHexString(t2).toUpperCase() +","+speedArray[(s2/5)]+","+Integer.toHexString(t3).toUpperCase() +","+speedArray[(s3/5)]+","+Integer.toHexString(t4).toUpperCase() +","+speedArray[(s4/5)]+","+"2A";
+        sendString = "23,01," + Integer.toHexString(t1).toUpperCase() + "," + speedArray[(s1 / 5)] + "," + Integer.toHexString(t2).toUpperCase() + "," + speedArray[(s2 / 5)] + "," + Integer.toHexString(t3).toUpperCase() + "," + speedArray[(s3 / 5)] + "," + Integer.toHexString(t4).toUpperCase() + "," + speedArray[(s4 / 5)] + "," + "2A";
 
         DeviceList.connectedThread = new DeviceList.ConnectedThread(DeviceList.bluetoothSocket);
         DeviceList.connectedThread.start();

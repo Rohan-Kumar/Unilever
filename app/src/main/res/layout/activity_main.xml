@@ -17,179 +17,172 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:background="@drawable/text_border"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Input1" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/time1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Time1"
-                        android:nextFocusForward="@+id/speed1"
-                        android:inputType="number"/>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/time1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Time1"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/speed1" />
 
-                </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/speed1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Speed1"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/time2" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/speed1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:nextFocusForward="@+id/time2"
-                        android:hint="@string/Speed1"
-                        android:inputType="number"/>
-
-                </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:background="@drawable/text_border"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Input2" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/time2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Time2"
-                        android:nextFocusForward="@+id/speed2"
-                        android:inputType="number"/>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Time2"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/speed2" />
 
-                </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/speed2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Speed2"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/time3" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/speed2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Speed2"
-                        android:nextFocusForward="@+id/time3"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:background="@drawable/text_border"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Input3" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/time3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Time3"
-                        android:nextFocusForward="@+id/speed3"
-                        android:inputType="number"/>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/time3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Time3"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/speed3" />
 
-                </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/speed3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Speed3"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/time4" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/speed3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Speed3"
-                        android:nextFocusForward="@+id/time4"
-                        android:inputType="number" />
-
-                </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:background="@drawable/text_border"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Input4" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/time4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Time4"
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/time4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Time4"
 
-                        android:inputType="number" />
+                    android:inputType="number" />
 
-                </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/speed4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="@string/Speed4"
+                    android:inputType="number" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/speed4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Speed4"
-                        android:inputType="number"/>
-
-                </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/start"
-                    android:onClick="start"/>
+                    android:layout_margin="20dp"
+                    android:background="#50ff00"
+                    android:onClick="start"
+                    android:text="@string/start" />
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/stop"
-                    android:onClick="stop"/>
+                    android:layout_margin="20dp"
+                    android:background="#50ff00"
+                    android:onClick="stop"
+                    android:text="@string/stop" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

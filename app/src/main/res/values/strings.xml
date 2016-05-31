@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">Unilever</string>
-    <string name="Input1">INPUT 1</string>
-    <string name="Input2">INPUT 2</string>
-    <string name="Input3">INPUT 3</string>
-    <string name="Input4">INPUT 4</string>
-    <string name="Time1">Time 1(in sec)</string>
-    <string name="Time2">Time 2(in sec)</string>
-    <string name="Time3">Time 3(in sec)</string>
-    <string name="Time4">Time 4(in sec)</string>
-    <string name="Speed1">Speed 1(X100RPM)</string>
-    <string name="Speed2">Speed 2(X100RPM)</string>
-    <string name="Speed3">Speed 3(X100RPM)</string>
-    <string name="Speed4">Speed 4(X100RPM)</string>
-    <string name="stop">STOP</string>
-    <string name="start">START</string>
+    <string name="Input1">\tINPUT 1\t</string>
+    <string name="Input2">\tINPUT 2\t</string>
+    <string name="Input3">\tINPUT 3\t</string>
+    <string name="Input4">\tINPUT 4\t</string>
+    <string name="Time1">   \tT1(in sec)\t</string>
+    <string name="Time2">   \tT2(in sec)\t</string>
+    <string name="Time3">   \tT3(in sec)\t</string>
+    <string name="Time4">   \tT4(in sec)\t</string>
+    <string name="Speed1">  \t S1(X100RPM)\t</string>
+    <string name="Speed2">  \t S2(X100RPM)\t</string>
+    <string name="Speed3">  \t S3(X100RPM)\t</string>
+    <string name="Speed4">  \t S4(X100RPM)\t</string>
+    <string name="stop">\tSTOP\t</string>
+    <string name="start">\tSTART\t</string>
 
     <string-array name="speed_hex">
         <!-- 0-->
