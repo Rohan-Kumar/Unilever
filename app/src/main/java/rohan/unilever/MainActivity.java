@@ -115,13 +115,19 @@ public class MainActivity extends AppCompatActivity {
         }
         String speedArray[] = MainActivity.this.getResources().getStringArray(R.array.speed_hex);
         sendString = "23,01,"+ Integer.toHexString(t1).toUpperCase() +","+speedArray[(s1/5)]+","+Integer.toHexString(t2).toUpperCase() +","+speedArray[(s2/5)]+","+Integer.toHexString(t3).toUpperCase() +","+speedArray[(s3/5)]+","+Integer.toHexString(t4).toUpperCase() +","+speedArray[(s4/5)]+","+"2A";
-        Toast.makeText(MainActivity.this, "Yet to come! "+sendString, Toast.LENGTH_SHORT).show();
+
+        DeviceList.connectedThread = new DeviceList.ConnectedThread(DeviceList.bluetoothSocket);
+        DeviceList.connectedThread.start();
+
         DeviceList.connectedThread.write(sendString);
     }
 
     public void stop(View view) {
         sendString = "23,01,0,0,0,0,0,0,0,0,2A";
-        Toast.makeText(MainActivity.this, "Yet to come!", Toast.LENGTH_SHORT).show();
+
+        DeviceList.connectedThread = new DeviceList.ConnectedThread(DeviceList.bluetoothSocket);
+        DeviceList.connectedThread.start();
+
         DeviceList.connectedThread.write(sendString);
     }
 }
