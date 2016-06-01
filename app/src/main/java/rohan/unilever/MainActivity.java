@@ -1,23 +1,70 @@
 package rohan.unilever;
 
+import android.annotation.TargetApi;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Set;
+import java.util.UUID;
+
 public class MainActivity extends AppCompatActivity {
+
 
     EditText time1, time2, time3, time4, speed1, speed2, speed3, speed4;
     String sendString = "";
-
+    int position;
     // speed-hexx[(s1%5)+5]
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        position=getIntent().getIntExtra("position",0);
+
         init();
+
+        new AsyncTask<Void,Void,Void>(){
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                DeviceList.bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+                DeviceList.bluetoothDevice = DeviceList.bluetoothAdapter.getRemoteDevice(DeviceList.address.get(position));
+                try {
+                    DeviceList.bluetoothSocket = DeviceList.createBluetoothSocket(DeviceList.bluetoothDevice);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    DeviceList.bluetoothSocket.connect();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                return null;
+            }
+        }.execute();
+
     }
+
 
     void init() {
         time1 = (EditText) findViewById(R.id.time1);
@@ -89,12 +136,12 @@ public class MainActivity extends AppCompatActivity {
             time4.requestFocus();
             return;
         }
-        if (s1 > 210 ) {
+        if (s1 > 210) {
             speed1.setError("Should be less than 210");
             speed1.requestFocus();
             return;
         }
-        if((s1 % 5) != 0){
+        if ((s1 % 5) != 0) {
             speed1.setError("Should be a multiple of 5");
             speed1.requestFocus();
             return;
@@ -104,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
             speed2.requestFocus();
             return;
         }
-        if((s2 % 5) != 0){
+        if ((s2 % 5) != 0) {
             speed2.setError("Should be a multiple of 5 ");
             speed2.requestFocus();
             return;
@@ -114,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             speed3.requestFocus();
             return;
         }
-        if((s3 % 5) != 0){
+        if ((s3 % 5) != 0) {
             speed3.setError("Should be a multiple of 5");
             speed3.requestFocus();
             return;
@@ -124,13 +171,14 @@ public class MainActivity extends AppCompatActivity {
             speed4.requestFocus();
             return;
         }
-        if((s4 % 5) != 0){
+        if ((s4 % 5) != 0) {
             speed4.setError("Should be a multiple of 5");
             speed4.requestFocus();
             return;
         }
-        String speedArray[] = MainActivity.this.getResources().getStringArray(R.array.speed_hex);
-        sendString = "23,01," + Integer.toHexString(t1).toUpperCase() + "," + speedArray[(s1 / 5)] + "," + Integer.toHexString(t2).toUpperCase() + "," + speedArray[(s2 / 5)] + "," + Integer.toHexString(t3).toUpperCase() + "," + speedArray[(s3 / 5)] + "," + Integer.toHexString(t4).toUpperCase() + "," + speedArray[(s4 / 5)] + "," + "2A";
+        String speedArray[] = MainActivity.this.getResources().getStringArray(R.array.speed_ascii);
+        sendString = "#\001" + (char) t1 +  (char)Integer.parseInt(speedArray[(s1 / 5)]) +  (char)t2 + (char)Integer.parseInt(speedArray[(s2 / 5)]) + (char)t3 + (char)Integer.parseInt(speedArray[(s3 / 5)]) + (char)t4 + (char)Integer.parseInt(speedArray[(s4 / 5)]) + "*";
+
 
         DeviceList.connectedThread = new DeviceList.ConnectedThread(DeviceList.bluetoothSocket);
         DeviceList.connectedThread.start();
@@ -139,11 +187,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void stop(View view) {
-        sendString = "23,01,0,0,0,0,0,0,0,0,2A";
+        sendString = "#\001\0\0\0\0\0\0\0\0*";
 
         DeviceList.connectedThread = new DeviceList.ConnectedThread(DeviceList.bluetoothSocket);
         DeviceList.connectedThread.start();
 
         DeviceList.connectedThread.write(sendString);
     }
+
+
+
 }
